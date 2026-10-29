@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rapor Digital SMPIT Al-Husna</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      padding: 20px; font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #eaf4ef, #dbeafe);
+      color: #183b2d;
+    }
+    .panel {
+      max-width: 560px; width: 100%; padding: 36px 24px;
+      text-align: center; background: white; border-radius: 20px;
+      box-shadow: 0 12px 40px #173b2d18;
+    }
+    .logo {
+      margin: auto auto 18px; width: 76px; height: 76px;
+      display: grid; place-items: center; border-radius: 20px;
+      background: #0b5d45; color: #f5d36e; font-size: 32px;
+      font-weight: bold;
+    }
+    h1 { font-size: 25px; margin: 0 0 10px; }
+    p { line-height: 1.6; color: #58675f; }
+    a {
+      display: inline-block; margin-top: 14px; padding: 14px 22px;
+      border-radius: 9px; background: #0b5d45; color: white;
+      font-weight: bold; text-decoration: none;
+    }
+    a:hover { background: #084936; }
+    .foot { font-size: 12px; margin-top: 25px; }
+  </style>
+</head>
+<body>
+  <main class="panel">
+    <div class="logo">AH</div>
+    <h1>Rapor Digital SMPIT Al-Husna</h1>
+    <p>Yayasan Mutiara Al-Husna</p>
+    <p>Tahun Pelajaran 2026/2027</p>
+    <p>
+      Sistem pengelolaan rapor digital untuk administrator,
+      guru, wali kelas, dan kepala sekolah.
+    </p>
+
+    <a id="openApp" href="#" target="_blank" rel="noopener">
+      Buka Aplikasi Rapor
+    </a>
+
+    <p class="foot">
+      Aplikasi utama dijalankan melalui Google Apps Script.
+      Gunakan akun yang diberikan administrator sekolah.
+    </p>
+  </main>
+
+  <script>
+    const APP_URL = 'https://script.google.com/macros/s/AKfycbwcB-vFTWdvUKkNNauZVmklI5Cu3756lO2Mui2WAL2hpUzgqFxeqj7k4vrkir86ZqTKGg/exec';
+
+    const button = document.getElementById('openApp');
+
+    if (/^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec$/.test(APP_URL)) {
+      button.href = APP_URL;
+    } else {
+      button.removeAttribute('href');
+      button.textContent = 'URL aplikasi belum dipasang';
+      button.style.opacity = '0.65';
+      button.style.cursor = 'default';
+    }
+  </script>
+</body>
+</html>
